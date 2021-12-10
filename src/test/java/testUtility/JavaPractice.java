@@ -13,9 +13,9 @@ import com.qmetry.qaf.automation.ui.webdriver.QAFWebElement;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
-public class WebTest {
+public class JavaPractice {
 
-		static WebDriver driver;
+	static WebDriver driver;
 	public static void main(String[] args) {
 		
 		
@@ -37,21 +37,31 @@ public class WebTest {
 			//th[text()='Company']
 			//table[@class='dataTable']/thead/tr[1]/th
 			
-			List<WebElement> element=new ArrayList<WebElement>();
-
-			WebElement ul= driver.findElement(By.xpath("//ul[@class='addressListItems']"));
+		//	List<WebElement> element=new ArrayList<WebElement>(); 
+			List<WebElement> tableHeader = driver.findElements(By.xpath("//table[@class='dataTable']/thead/tr[1]/th"));
+			int size = tableHeader.size();
+			System.out.println(size);
 			
 			
+			///Prints all header Names
+			for (WebElement header:tableHeader) {
+				header.getText();
+				System.out.println(header.getText());
+			} 
 			
-			//xpath oful
-		
+			
+			//Prints the Header if it equals a certain Value
+			for (WebElement header:tableHeader) {
+				if (header.getText().equalsIgnoreCase("Company")){
+					System.out.println(header.getText());
+				}
+			}
 			
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
-
+				
 	}
 
 }
