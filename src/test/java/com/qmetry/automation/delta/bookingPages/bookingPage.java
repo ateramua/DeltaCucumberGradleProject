@@ -1,9 +1,12 @@
-package deltaPages;
+package com.qmetry.automation.delta.bookingPages;
 
+import com.qmetry.qaf.automation.ui.WebDriverBaseTestPage;
 import com.qmetry.qaf.automation.ui.annotations.FindBy;
+import com.qmetry.qaf.automation.ui.api.PageLocator;
+import com.qmetry.qaf.automation.ui.api.WebDriverTestPage;
 import com.qmetry.qaf.automation.ui.webdriver.QAFWebElement;
 
-public class bookingPage {
+public class bookingPage extends WebDriverBaseTestPage<WebDriverTestPage> {
 	
 	@FindBy(locator = "{'locator':'css=.header';'desc':'Header of Page'}")
 	QAFWebElement book;
@@ -104,6 +107,15 @@ public class bookingPage {
 	QAFWebElement ninePassengers;
 	public QAFWebElement selectNinePassengers() {
 	return ninePassengers;
+	}
+	
+	protected void openPage(PageLocator locator, Object... args) {
+		driver.get("/");
+		driver.manage().window().maximize();
+	}
+	
+	public void invoke() {
+		launchPage(null);
 	}
 	
 	//#ui-list-passengers1
