@@ -42,7 +42,12 @@ dependencies {
     implementation 'com.qmetry:qaf:3.1.0-RC2'
     implementation 'com.qmetry:qaf-support:3.1.0-RC2'
     implementation 'com.qmetry:qaf-support-ws:3.1.0-RC2'
- 
+    
+    
+	//ExtentReport
+	implementation 'com.aventstack:extentreports:5.0.9'
+	
+	
 }
 
 

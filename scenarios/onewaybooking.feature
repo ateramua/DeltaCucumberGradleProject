@@ -3,6 +3,7 @@ Feature: Booking Page Validation
 Scenario: Validate One Way Booking
 
 Given User is on Delta Booking Page 
+"""
 When User clicks on From Link 
 And User enters departure airport 'LAX'
 And User selects departure airport from search results
@@ -14,3 +15,4 @@ And User selects departure date '02/05/2022'
 And User selects number of passenger '2'
 And User clicks on search button
 Then list of flights should generate
+"""
